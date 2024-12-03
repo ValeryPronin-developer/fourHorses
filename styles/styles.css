@@ -541,7 +541,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stages__title {
-    font-size: clamp(36px, calc(36px + 18 * (100vw / 1366)), 54px);
+    font-size: 54px;
     line-height: 1.2;
 }
 
@@ -825,7 +825,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .persons-wrapper__title {
-    font-size: clamp(36px, calc(36px + 18 * (100vw / 1366)), 54px);
+    font-size: 54px;
     line-height: 1.2;
 }
 
