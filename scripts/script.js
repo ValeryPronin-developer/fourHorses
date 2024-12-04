@@ -13,18 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
     let autoSwitchInterval
 
     function updatePersons() {
-        persons.forEach(person => person.classList.remove("active"))
+        persons.forEach(person => {
+            person.classList.remove("active")
+        })
 
-        for (let i = currentIndex; i < currentIndex + itemsPerPage; i++) {
-            if (persons[i]) {
-                persons[i].classList.add("active")
-            }
+        if (currentIndex + itemsPerPage > persons.length) {
+            currentIndex = 0
         }
+
+        setTimeout(() => {
+            for (let i = currentIndex; i < currentIndex + itemsPerPage; i++) {
+                if (persons[i]) {
+                    persons[i].classList.add("active")
+                }
+            }
+        }, 250)
 
         paginationInfo.innerHTML = `
             ${Math.min(currentIndex + itemsPerPage, persons.length)} 
             <span class="persons-wrapper__pagination--opacity">/ ${persons.length}</span>
         `
+
+        leftButton.disabled = currentIndex === 0
     }
 
     function resetAutoSwitch() {
@@ -47,6 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rightButton.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % persons.length
+        if (currentIndex + itemsPerPage > persons.length) {
+            currentIndex = 0
+        }
         updatePersons()
         resetAutoSwitch()
     })
@@ -57,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     startAutoSwitch()
-
     updatePersons()
 })
 

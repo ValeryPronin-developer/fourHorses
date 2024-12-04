@@ -63,7 +63,7 @@ button:hover {
 
 .mini-button {
     width: 44px;
-    aspect-ratio: 1;
+    height: 44px;
     border-radius: 50%;
     flex-shrink: 0;
     background-color: var(--color-dark-gray);
@@ -140,8 +140,8 @@ body {
     height: 700px;
     z-index: -1;
     content: "";
-    background: url("../images/background-header.png") no-repeat center,
-    url("../images/background.png") center,
+    background: url("../images/background-header.webp") no-repeat center,
+    url("../images/background.webp") center,
     #e5d5ca;
 }
 
@@ -265,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .container--header::before {
         height: 774px;
-        background: url("../images/background-mobile.png") no-repeat center;
+        background: url("../images/background-mobile.webp") no-repeat center;
     }
 
     .navigation {
@@ -596,7 +596,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 16px;
     padding: 20px;
-    background: url("../images/background-stage.png");
+    background: url("../images/background-stage.webp");
 }
 
 .table-stages__text {
@@ -762,7 +762,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .group-stage1,
     .group-stage2 {
-        background: url("../images/background-stage.png");
+        background: url("../images/background-stage.webp");
     }
 
     .table-stages .image-air {
@@ -778,22 +778,6 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         justify-content: center;
         gap: 16px;
-    }
-
-    .stages-pagination .mini-button {
-        width: 36px;
-    }
-
-    .stages-pagination .mini-button img {
-        height: 14px;
-    }
-
-    .stages-pagination .mini-button--left {
-        padding-left: 13px;
-    }
-
-    .stages-pagination .mini-button--right {
-        padding-left: 16px;
     }
 
     .pagination-dots {
@@ -849,21 +833,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .persons {
     margin-top: 60px;
+    height: 462px;
     display: flex;
     gap: 20px;
 }
 
 .person {
+    position: absolute;
     max-width: 394px;
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
 }
 
 .person.active {
-    display: flex;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
 }
 
 .person__name {
@@ -924,20 +918,22 @@ h1, h2, h3, h4, h5, h6 {
         left: 103px;
     }
 
-    .persons-wrapper__pagination .mini-button {
+    .mini-button {
         width: 36px;
+        height: 36px;
+        object-fit: contain;
     }
 
-    .persons-wrapper__pagination .mini-button img {
+    .mini-button img {
         height: 14px;
         width: 7px;
     }
 
-    .persons-wrapper__pagination .mini-button--left {
+    .mini-button--left {
         padding-left: 13px;
     }
 
-    .persons-wrapper__pagination .mini-button--right {
+    .mini-button--right {
         padding-left: 16px;
     }
 }
