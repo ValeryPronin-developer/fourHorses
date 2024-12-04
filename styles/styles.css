@@ -415,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-blue)
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1094px) {
     .info {
         display: flex;
         flex-direction: column;
@@ -930,6 +930,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .persons-wrapper__pagination .mini-button img {
         height: 14px;
+        flex-shrink: 0;
     }
 
     .persons-wrapper__pagination .mini-button--left {
