@@ -237,6 +237,15 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
+@media (hover: none) and (pointer: coarse) {
+    .button,
+    .button--light,
+    .medium-button,
+    .mini-button {
+        pointer-events: none;
+    }
+}
+
 @media (max-width: 1024px) {
     .button--light {
         background-color: var(--color-light);

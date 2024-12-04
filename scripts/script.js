@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let itemsPerPage = window.innerWidth < 581 ? 1 : 3
     let currentIndex = 0
     let autoSwitchInterval
+    let isAnimating = false
 
     function updatePersons() {
+        if (isAnimating) return
+
+        isAnimating = true
         persons.forEach(person => {
             person.classList.remove("active")
         })
@@ -27,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     persons[i].classList.add("active")
                 }
             }
+            isAnimating = false
         }, 250)
 
         paginationInfo.innerHTML = `
