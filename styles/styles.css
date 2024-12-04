@@ -929,8 +929,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .persons-wrapper__pagination .mini-button img {
-        max-height: 14px;
-        flex-shrink: 0;
+        height: 14px;
+        width: 7px;
     }
 
     .persons-wrapper__pagination .mini-button--left {
