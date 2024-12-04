@@ -929,7 +929,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .persons-wrapper__pagination .mini-button img {
-        height: 14px;
+        max-height: 14px;
         flex-shrink: 0;
     }
 
