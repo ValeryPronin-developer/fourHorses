@@ -925,14 +925,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .mini-button {
-        width: 36px;
-        height: 36px;
+        max-width: 36px;
+        max-height: 36px;
         object-fit: contain;
     }
 
     .mini-button img {
-        height: 14px;
-        width: 7px;
+        max-height: 14px;
+        max-width: 7px;
     }
 
     .mini-button--left {
