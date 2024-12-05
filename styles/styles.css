@@ -45,9 +45,18 @@ button:hover {
     transition-duration: var(--transition-duration);
 }
 
-.button:hover {
-    color: var(--color-dark);
-    background-color: var(--color-yellow);
+@media (hover: hover) {
+    .button:hover {
+        color: var(--color-dark);
+        background-color: var(--color-yellow);
+    }
+}
+
+@media (hover: none) {
+    .button:active {
+        color: var(--color-dark);
+        background-color: var(--color-yellow);
+    }
 }
 
 .button--light {
@@ -56,9 +65,18 @@ button:hover {
     border: 2px solid var(--color-dark);
 }
 
-.button--light:hover {
-    color: var(--color-light);
-    background-color: var(--color-dark);
+@media (hover: hover) {
+    .button--light:hover {
+        color: var(--color-light);
+        background-color: var(--color-dark);
+    }
+}
+
+@media (hover: none) {
+    .button--light:active {
+        color: var(--color-light);
+        background-color: var(--color-dark);
+    }
 }
 
 .mini-button {
@@ -87,8 +105,16 @@ button:hover {
     padding-left: 18px;
 }
 
-.mini-button:hover {
-    background-color: var(--color-yellow);
+@media (hover: hover) {
+    .mini-button:hover {
+        background-color: var(--color-yellow);
+    }
+}
+
+@media (hover: none) {
+    .mini-button:active {
+        background-color: var(--color-yellow);
+    }
 }
 
 .medium-button {
@@ -108,9 +134,18 @@ button:hover {
     background: none;
 }
 
-.medium-button:hover {
-    color: var(--color-light);
-    background-color: var(--color-blue);
+@media (hover: hover) {
+    .medium-button:hover {
+        color: var(--color-light);
+        background-color: var(--color-blue);
+    }
+}
+
+@media (hover: none) {
+    .medium-button:active {
+        color: var(--color-light);
+        background-color: var(--color-blue);
+    }
 }
 
 body {
@@ -850,7 +885,6 @@ h1, h2, h3, h4, h5, h6 {
     visibility: hidden;
     transform: scale(0.9);
     transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s 0s;
-    animation-fill-mode: forwards;
 }
 
 .person.active {

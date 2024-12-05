@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let itemsPerPage = window.innerWidth < 581 ? 1 : 3
     let currentIndex = 0
     let autoSwitchInterval
+    let isAnimating = false
 
     function updatePersons() {
+        if (isAnimating) return
+        isAnimating = true
+
         persons.forEach(person => {
             person.classList.remove("active")
         })
@@ -27,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     persons[i].classList.add("active")
                 }
             }
-        }, 250)
+            isAnimating = false
+        }, 3750)
 
         paginationInfo.innerHTML = `
             ${Math.min(currentIndex + itemsPerPage, persons.length)} 
@@ -50,12 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     leftButton.addEventListener("click", () => {
+        if (isAnimating) return
         currentIndex = (currentIndex - 1 + persons.length) % persons.length
         updatePersons()
         resetAutoSwitch()
     })
 
     rightButton.addEventListener("click", () => {
+        if (isAnimating) return
         currentIndex = (currentIndex + 1) % persons.length
         if (currentIndex + itemsPerPage > persons.length) {
             currentIndex = 0
@@ -72,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoSwitch()
     updatePersons()
 })
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const stages = document.querySelectorAll('.interactive-stage')
@@ -113,12 +121,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     updateCarousel(currentIndex)
-})
-
-document.querySelectorAll('.button, .button--light, .mini-button, .medium-button')
-    .forEach(button => {
-    button.addEventListener('touchend', () => {
-        button.style.pointerEvents = 'none'
-        setTimeout(() => button.style.pointerEvents = '', 300)
-    })
 })
