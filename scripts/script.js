@@ -2,7 +2,7 @@ document.querySelector('.button--light').addEventListener('click', () => {
     document.getElementById('container--stages').scrollIntoView()
 })
 
-
+document.addEventListener("DOMContentLoaded", () => {
     const persons = document.querySelectorAll(".person")
     const leftButton = document.querySelector("#last-person")
     const rightButton = document.querySelector("#next-person")
@@ -71,7 +71,7 @@ document.querySelector('.button--light').addEventListener('click', () => {
 
     startAutoSwitch()
     updatePersons()
-
+})
 
 document.addEventListener("DOMContentLoaded", () => {
     const stages = document.querySelectorAll('.interactive-stage')
@@ -113,4 +113,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     updateCarousel(currentIndex)
+})
+
+document.querySelectorAll('.button, .button--light, .mini-button, .medium-button')
+    .forEach(button => {
+    button.addEventListener('touchend', () => {
+        button.style.pointerEvents = 'none'
+        setTimeout(() => button.style.pointerEvents = '', 300)
+    })
 })
