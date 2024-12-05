@@ -939,12 +939,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .person {
         width: 349px;
-        transition: none;
-        transform: none;
-    }
-
-    .person.active {
-        transform: none;
     }
 
     .persons-wrapper__title {

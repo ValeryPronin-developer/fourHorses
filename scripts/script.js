@@ -21,13 +21,21 @@ document.addEventListener("DOMContentLoaded", () => {
             currentIndex = 0
         }
 
-        setTimeout(() => {
+        if (window.innerWidth > 580) {
+            setTimeout(() => {
+                for (let i = currentIndex; i < currentIndex + itemsPerPage; i++) {
+                    if (persons[i]) {
+                        persons[i].classList.add("active")
+                    }
+                }
+            }, 250)
+        } else {
             for (let i = currentIndex; i < currentIndex + itemsPerPage; i++) {
                 if (persons[i]) {
                     persons[i].classList.add("active")
                 }
             }
-        }, 250)
+        }
 
         paginationInfo.innerHTML = `
             ${Math.min(currentIndex + itemsPerPage, persons.length)} 
