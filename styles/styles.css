@@ -237,15 +237,6 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
-@media (hover: none) and (pointer: coarse) {
-    .button,
-    .button--light,
-    .medium-button,
-    .mini-button {
-        pointer-events: none;
-    }
-}
-
 @media (max-width: 1024px) {
     .button--light {
         background-color: var(--color-light);
@@ -870,7 +861,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .person__name {
-    margin-top: 28px;
+    margin-top: 30px;
     font-size: 24px;
     line-height: 1.2;
     font-weight: 600;
@@ -894,7 +885,9 @@ h1, h2, h3, h4, h5, h6 {
     .person {
         max-height: 411px;
     }
+}
 
+@media (580px <= width <= 840px) {
     .person.active {
         justify-content: space-between;
     }
@@ -907,6 +900,10 @@ h1, h2, h3, h4, h5, h6 {
 
     .persons {
         margin-top: 40px;
+    }
+
+    .person {
+        width: 349px;
     }
 
     .persons-wrapper__title {
@@ -969,6 +966,6 @@ footer {
     }
 
     .running-line--footer {
-        margin-top: 178px;
+        margin-top: 104px;
     }
 }
