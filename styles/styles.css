@@ -931,12 +931,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .mini-button img {
-        max-height: 14px;
+        height: 14px;
         max-width: 7px;
-    }
-
-    .mini-button--left {
-        padding-left: 13px;
     }
 
     .mini-button--right {
