@@ -2,7 +2,7 @@ document.querySelector('.button--light').addEventListener('click', () => {
     document.getElementById('container--stages').scrollIntoView()
 })
 
-document.addEventListener("DOMContentLoaded", () => {
+
     const persons = document.querySelectorAll(".person")
     const leftButton = document.querySelector("#last-person")
     const rightButton = document.querySelector("#next-person")
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startAutoSwitch()
     updatePersons()
-})
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const stages = document.querySelectorAll('.interactive-stage')
