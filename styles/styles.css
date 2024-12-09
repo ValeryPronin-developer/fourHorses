@@ -190,6 +190,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 26px;
 }
 
+.logo {
+    max-width: 246px;
+    display: block;
+}
+
 .navigation {
     max-width: 542px;
 }
